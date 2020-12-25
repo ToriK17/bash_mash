@@ -29,3 +29,50 @@ fi
 if [ $x -eq $y ]
 then echo "X is equal to Y"
 fi
+
+# Given two integers, x and y, find their sum, difference, product, and quotient.
+# Constraints: 
+# y cannot = 0
+# range: -100 to 100
+
+read x
+read y
+
+((answer = $x + $y ))
+echo $answer
+
+((answer = $x - $y))
+echo $answer
+
+((answer = $x * $y))
+echo $answer
+
+((answer = $x / $y))
+echo $answer
+
+# Note that this wont work if you do the math in the opposite order i.e. $x + $y = answer
+
+# Read in one character from STDIN.
+# If the character is 'Y' or 'y' display "YES".
+# If the character is 'N' or 'n' display "NO".
+# No other character will be provided as input.
+read x
+declare -l x
+x=$x;
+if [ $x == "y" ]
+then echo "YES"
+fi
+if [ $x == "n" ]
+then echo "NO"
+fi
+
+# Better way using Bash 4.0
+read x 
+x="${x,,}"
+
+if [ $x == "y" ]
+then echo "YES"
+fi
+if [ $x == "n" ]
+then echo "NO"
+fi
